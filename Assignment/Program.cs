@@ -87,6 +87,29 @@ namespace Assignment
             //    Console.WriteLine(item);
             //}
             #endregion
+
+
+            #region Q4
+            ////implement a custom list called FixedSizeList<T> with a predetermined capacity
+            ////. This list should not allow more elements than its capacity and
+            ////should provide clear messages if one tries to exceed it or access invalid indices
+
+            //FixedSizeList<int> list1 = new FixedSizeList<int>(5);
+            //for (int i = 0; i < list1.FixedCapcity; i++)
+            //{
+            //    list1.Add(i);
+            //}
+            //for (int i = 0; i < list1.FixedCapcity; i++)
+            //{
+            //    Console.WriteLine(list1.Get(i));
+            //}
+
+            #endregion
+
+            #region Q5
+
+            #endregion
+
         }
     }
 }
