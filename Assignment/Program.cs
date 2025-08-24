@@ -17,6 +17,22 @@ namespace Assignment
                     }
                 }
         }
+
+        static int[] ReturnEven(int[]arr)
+        {
+           
+            if (arr is not null)
+            {
+                List<int> result = new List<int>();
+
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    if (arr[i] % 2 == 0 ) result.Add(arr[i]);
+                }
+                return result.ToArray();
+            }
+            return null!;
+        }
         static void Main(string[] args)
         {
             #region Q1
@@ -54,6 +70,22 @@ namespace Assignment
             //    Console.WriteLine(item);
             //}
 
+            #endregion
+
+            #region Q3
+            ////You are given a list of integers.
+            ////Your task is to find and return a new list containing only the even numbers from the given list.
+            //int[] arr = [1, 2, 3, 4, 5, 6,100,20,33];
+            //foreach (int item in arr)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //int []result=ReturnEven(arr);
+            //Console.WriteLine("After return even only");
+            //foreach (int item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
             #endregion
         }
     }
