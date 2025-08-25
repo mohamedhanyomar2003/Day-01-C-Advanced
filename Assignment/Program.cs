@@ -33,6 +33,25 @@ namespace Assignment
             }
             return null!;
         }
+        static int ReturnNonRepeated(string x)
+        {
+            for (int i = 0; i < x.Length; i++)
+            {
+                bool flag = true;
+                for (int j= i+1; j < x.Length-1; j++)
+                {
+                    if (x[i] == x[j])
+                    {
+                        flag = false;
+                    }
+                }
+                if (flag)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
         static void Main(string[] args)
         {
             #region Q1
@@ -107,7 +126,11 @@ namespace Assignment
             #endregion
 
             #region Q5
+            ////Given a string, find the first non-repeated character in it and return its index.
+            ////If there is no such character, return 
 
+            //string x = "MohaMed";
+            //Console.WriteLine(ReturnNonRepeated(x)); 
             #endregion
 
         }
