@@ -1,4 +1,6 @@
-﻿using System.Formats.Tar;
+﻿using System.Collections;
+using System.ComponentModel.Design;
+using System.Formats.Tar;
 
 namespace Assignment
 {
@@ -33,22 +35,45 @@ namespace Assignment
             }
             return null!;
         }
+        //static int ReturnNonRepeated(string x)
+        //{
+        //    for (int i = 0; i < x.Length; i++)
+        //    {
+        //        bool flag = true;
+        //        for (int j= i+1; j < x.Length-1; j++)
+        //        {
+        //            if (x[i] == x[j])
+        //            {
+        //                flag = false;
+        //            }
+        //        }
+        //        if (flag)
+        //        {
+        //            return i;
+        //        }
+        //    }
+        //    return -1;
+        //}
+
         static int ReturnNonRepeated(string x)
         {
+            x = x.ToLower();
+            Dictionary<char,int> dic=new Dictionary<char, int>();
+            for (int i = 0; i < x.Length; i++)
+            {  
+                if (dic.ContainsKey(x[i]))
+                {
+                    dic[x[i]]++;
+                }
+                else
+                {
+                    dic.Add(x[i], 1);
+                }
+                    
+            }
             for (int i = 0; i < x.Length; i++)
             {
-                bool flag = true;
-                for (int j= i+1; j < x.Length-1; j++)
-                {
-                    if (x[i] == x[j])
-                    {
-                        flag = false;
-                    }
-                }
-                if (flag)
-                {
-                    return i;
-                }
+                if (dic[x[i]] == 1) return i;
             }
             return -1;
         }
@@ -129,8 +154,8 @@ namespace Assignment
             ////Given a string, find the first non-repeated character in it and return its index.
             ////If there is no such character, return 
 
-            //string x = "MohaMed";
-            //Console.WriteLine(ReturnNonRepeated(x)); 
+            string x = "mohaMedooehad";
+            Console.WriteLine(ReturnNonRepeated(x));
             #endregion
 
         }
