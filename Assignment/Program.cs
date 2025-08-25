@@ -6,30 +6,43 @@ namespace Assignment
 {
     internal class Program
     {
-        static void Reverse<T>(ref T []arr)
+        //static void Reverse<T>(ref T []arr)
+        //{
+        //    if (arr is not null)
+        //   for (int i=0;i<arr.Length; ++i)
+        //        {
+        //            for (int j = 0; j < arr.Length - 1 - i; ++j)
+        //            {
+        //                T temp = arr[j];
+        //                arr[j] = arr[j + 1];
+        //                arr[j + 1] = temp;
+        //            }
+        //        }
+        //}
+
+        static void Reverse<T>(ref T[] arr)
         {
             if (arr is not null)
-           for (int i=0;i<arr.Length; ++i)
+                for (int i = 0, j = arr.Length - 1; i < arr.Length / 2; ++i, --j)
                 {
-                    for (int j = 0; j < arr.Length - 1 - i; ++j)
-                    {
-                        T temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp;
-                    }
+                    T temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+
                 }
         }
 
-        static int[] ReturnEven(int[]arr)
+
+        static int[] ReturnEven(int[] arr)
         {
-           
+
             if (arr is not null)
             {
                 List<int> result = new List<int>();
 
                 for (int i = 0; i < arr.Length; i++)
                 {
-                    if (arr[i] % 2 == 0 ) result.Add(arr[i]);
+                    if (arr[i] % 2 == 0) result.Add(arr[i]);
                 }
                 return result.ToArray();
             }
@@ -58,9 +71,9 @@ namespace Assignment
         static int ReturnNonRepeated(string x)
         {
             x = x.ToLower();
-            Dictionary<char,int> dic=new Dictionary<char, int>();
+            Dictionary<char, int> dic = new Dictionary<char, int>();
             for (int i = 0; i < x.Length; i++)
-            {  
+            {
                 if (dic.ContainsKey(x[i]))
                 {
                     dic[x[i]]++;
@@ -69,7 +82,7 @@ namespace Assignment
                 {
                     dic.Add(x[i], 1);
                 }
-                    
+
             }
             for (int i = 0; i < x.Length; i++)
             {
@@ -102,7 +115,7 @@ namespace Assignment
             ////without using the built-in Reverse. Implement a function that takes the ArrayList as input
             ////and modifies it to have the reversed order of elements.
 
-            //int []arr =[1,2,3,4,5,6];
+            //int[] arr = [1, 2, 3, 4, 5, 6,7];
             //foreach (int item in arr)
             //{
             //    Console.WriteLine(item);
@@ -151,11 +164,11 @@ namespace Assignment
             #endregion
 
             #region Q5
-            ////Given a string, find the first non-repeated character in it and return its index.
-            ////If there is no such character, return 
+            //////Given a string, find the first non-repeated character in it and return its index.
+            //////If there is no such character, return 
 
-            string x = "mohaMedooehad";
-            Console.WriteLine(ReturnNonRepeated(x));
+            //string x = "mohaMedooehad";
+            //Console.WriteLine(ReturnNonRepeated(x));
             #endregion
 
         }
